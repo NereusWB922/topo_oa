@@ -18,7 +18,14 @@ pip install -r requirements.txt
 
 To start the server in dev mode, run:
 ```sh
-uvicorn main:app --host localhost --port 8000 --reload
+uvicorn app.main:app --host localhost --port 8000 --reload
 ```
 
 Once the server is running, navigate to [http://localhost:8000/docs](http://localhost:8000/docs) to access the Swagger UI
+
+## Run Unit Tests
+
+To run the unit tests, use the following command:
+```sh
+pytest --cov=app tests/
+```
