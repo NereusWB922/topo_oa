@@ -22,6 +22,8 @@ def get_data_by_type(file_type: str):
         return data_ingestor.ingest_from_json("app/datasets/dataset1.json")
     elif file_type == "csv":
         return data_ingestor.ingest_from_csv("app/datasets/dataset2.csv")
+    elif file_type == "pdf":
+        return data_ingestor.ingest_from_pdf("app/datasets/dataset3.pdf")
     else:
         supported_types = ["json", "csv"]
         raise ValueError(

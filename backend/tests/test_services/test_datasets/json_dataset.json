@@ -2,19 +2,19 @@
     {
         "id": 1,
         "name": "John Doe",
-        "age": 30,
+        "age": 28,
         "city": "New York"
     },
     {
         "id": 2,
         "name": "Jane Smith",
-        "age": 25,
+        "age": 34,
         "city": "Los Angeles"
     },
     {
         "id": 3,
         "name": "Emily Johnson",
-        "age": 35,
+        "age": 22,
         "city": "Chicago"
     }
 ]

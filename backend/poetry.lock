@@ -143,6 +143,17 @@ files = [
 toml = ["tomli"]
 
 [[package]]
+name = "distro"
+version = "1.9.0"
+description = "Distro - an OS platform information API"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "distro-1.9.0-py3-none-any.whl", hash = "sha256:7bffd925d65168f85027d8da9af6bddab658135b840670a223589bc0c8ef02b2"},
+    {file = "distro-1.9.0.tar.gz", hash = "sha256:2fa77c6fd8940f116ee1d6b94a2f90b13b5ea8d019b98bc8bafdcabcdd9bdbed"},
+]
+
+[[package]]
 name = "dnspython"
 version = "2.7.0"
 description = "DNS toolkit"
@@ -1050,6 +1061,28 @@ anyio = ">=3.4.0,<5"
 full = ["httpx (>=0.22.0)", "itsdangerous", "jinja2", "python-multipart (>=0.0.7)", "pyyaml"]
 
 [[package]]
+name = "tabula-py"
+version = "2.10.0"
+description = "Simple wrapper for tabula-java, read tables from PDF into DataFrame"
+optional = false
+python-versions = ">=3.9"
+files = [
+    {file = "tabula_py-2.10.0-py3-none-any.whl", hash = "sha256:c7596c559fc813e313eb4fbc7aabe7e4290dbd04717c4cbe4aa4a2cafd00ab63"},
+    {file = "tabula_py-2.10.0.tar.gz", hash = "sha256:75968a83fe978e5d56ccf23f0f0255a459c256b7b52db7cabe5ac795bb3b12df"},
+]
+
+[package.dependencies]
+distro = "*"
+numpy = ">1.24.4"
+pandas = ">=0.25.3"
+
+[package.extras]
+dev = ["Flake8-pyproject", "mypy", "pytest", "ruff"]
+doc = ["Jinja2 (==3.1.2)", "sphinx (==7.1.2)", "sphinx-rtd-theme (==1.3.0)"]
+jpype = ["jpype1"]
+test = ["pytest"]
+
+[[package]]
 name = "typer"
 version = "0.15.1"
 description = "Typer, build great CLIs. Easy to code. Based on Python type hints."
@@ -1328,4 +1361,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "bc47e260d57a3b9f255cf7450f8c866a6050eea8edd98b746eb639e79385f892"
+content-hash = "f421768240afe27230bacf4a71f0c9cac3a402762791ac87d5df7b38e1ab36e6"
