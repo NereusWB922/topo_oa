@@ -1,8 +1,11 @@
 from fastapi import APIRouter
-from app.services.data_ingestor import DataIngestor
+from app.pipeline.pipeline import Pipeline
+from app.pipeline.ingestion.csv_ingestion import CsvIngestion
+from app.pipeline.ingestion.json_ingestion import JsonIngestion
+from app.pipeline.ingestion.pdf_ingestion import PdfIngestion
+from app.pipeline.ingestion.pptx_ingestion import PptxIngestion
 
 router = APIRouter(prefix="/api/data")
-data_ingestor = DataIngestor()
 
 dummy_data = [
     {"name": "Item 1", "value": 100},
@@ -19,11 +22,13 @@ def get_full_data():
 @router.get("/{file_type}")
 def get_data_by_type(file_type: str):
     if file_type == "json":
-        return data_ingestor.ingest_from_json("app/datasets/dataset1.json")
+        return (
+            Pipeline().add_step(JsonIngestion("app/datasets/dataset1.json")).execute()
+        )
     elif file_type == "csv":
-        return data_ingestor.ingest_from_csv("app/datasets/dataset2.csv")
+        return Pipeline().add_step(CsvIngestion("app/datasets/dataset2.csv")).execute()
     elif file_type == "pdf":
-        return data_ingestor.ingest_from_pdf("app/datasets/dataset3.pdf")
+        return Pipeline().add_step(PdfIngestion("app/datasets/dataset3.pdf")).execute()
     else:
         supported_types = ["json", "csv"]
         raise ValueError(
