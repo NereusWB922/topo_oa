@@ -10,6 +10,7 @@ python = "^3.12"
 fastapi = {extras = ["standard"], version = "^0.115.6"}
 pandas = "^2.2.3"
 tabula-py = "^2.10.0"
+python-pptx = "^1.0.2"
 
 
 [tool.poetry.group.dev.dependencies]

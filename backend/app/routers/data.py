@@ -29,8 +29,12 @@ def get_data_by_type(file_type: str):
         return Pipeline().add_step(CsvIngestion("app/datasets/dataset2.csv")).execute()
     elif file_type == "pdf":
         return Pipeline().add_step(PdfIngestion("app/datasets/dataset3.pdf")).execute()
+    elif file_type == "pptx":
+        return (
+            Pipeline().add_step(PptxIngestion("app/datasets/dataset4.pptx")).execute()
+        )
     else:
-        supported_types = ["json", "csv"]
+        supported_types = ["json", "csv", "pdf", "pptx"]
         raise ValueError(
             f"Unsupported file type: {file_type}. Supported file types are: {', '.join(supported_types)}"
         )
