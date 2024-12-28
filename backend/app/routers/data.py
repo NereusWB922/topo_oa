@@ -5,6 +5,7 @@ from app.pipeline.ingestion.json_ingestion import JsonIngestion
 from app.pipeline.ingestion.pdf_ingestion import PdfIngestion
 from app.pipeline.ingestion.pptx_ingestion import PptxIngestion
 from app.pipeline.processing.key_formatter import KeyFormatter
+from app.pipeline.processing.parse_str_to_num import ParseStrToNum
 
 router = APIRouter(prefix="/api/data")
 
@@ -41,6 +42,7 @@ def get_data_by_type(file_type: str):
             Pipeline()
             .add_step(PdfIngestion("app/datasets/dataset3.pdf"))
             .add_step(KeyFormatter())
+            .add_step(ParseStrToNum(target_fields=["revenue_in_$"]))
             .execute()
         )
     elif file_type == "pptx":
