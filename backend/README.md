@@ -1,4 +1,4 @@
-# API (Built with FastAPI)
+# API (FastAPI)
 
 ## Restore Dependencies
 
