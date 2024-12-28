@@ -1,3 +1,4 @@
+import re
 from typing import List
 from decimal import Decimal, InvalidOperation
 from app.pipeline.step import Step
@@ -17,7 +18,7 @@ class ParseStrToNum(Step):
         if value is None:
             return None
         try:
-            number = Decimal(value.replace(",", ""))
+            number = Decimal(re.sub(r"[,$%]", "", value))
             return int(number) if number % 1 == 0 else float(number)
         except InvalidOperation:
             return value

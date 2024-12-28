@@ -11,6 +11,8 @@ def parser():
     "data, expected",
     [
         ({"field1": "123"}, {"field1": 123}),
+        ({"field1": "$123"}, {"field1": 123}),
+        ({"field1": "90%"}, {"field1": 90}),
         ({"field1": None}, {"field1": None}),
         ({"field1": "123.45"}, {"field1": 123.45}),
         ({"field1": "abc"}, {"field1": "abc"}),

@@ -6,6 +6,7 @@ from app.pipeline.ingestion.pdf_ingestion import PdfIngestion
 from app.pipeline.ingestion.pptx_ingestion import PptxIngestion
 from app.pipeline.processing.key_formatter import KeyFormatter
 from app.pipeline.processing.parse_str_to_num import ParseStrToNum
+from app.pipeline.processing.process_adhoc_pptx import ProcessAdhocPptx
 
 router = APIRouter(prefix="/api/data")
 
@@ -47,7 +48,26 @@ def get_data_by_type(file_type: str):
         )
     elif file_type == "pptx":
         return (
-            Pipeline().add_step(PptxIngestion("app/datasets/dataset4.pptx")).execute()
+            Pipeline()
+            .add_step(PptxIngestion("app/datasets/dataset4.pptx"))
+            .add_step(ProcessAdhocPptx())
+            .add_step(KeyFormatter())
+            .add_step(
+                ParseStrToNum(
+                    target_fields=[
+                        "key_highlights.total_revenue",
+                        "key_highlights.total_memberships_sold",
+                        "quarterly_metrics.revenue_in_$",
+                        "quarterly_metrics.memberships_sold",
+                        "quarterly_metrics.avg_duration_minutes",
+                        "revenue_distribution.gym",
+                        "revenue_distribution.pool",
+                        "revenue_distribution.tennis_court",
+                        "revenue_distribution.personal_training",
+                    ]
+                )
+            )
+            .execute()
         )
     else:
         supported_types = ["json", "csv", "pdf", "pptx"]
