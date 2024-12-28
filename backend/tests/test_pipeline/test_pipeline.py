@@ -1,5 +1,5 @@
-from app.pipeline.pipeline import Pipeline
-from app.pipeline.step import Step
+from app.pipeline import Pipeline
+from app.pipeline import Step
 
 
 def test_add_step(mocker):

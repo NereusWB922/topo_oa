@@ -1,5 +1,5 @@
 from pptx import Presentation
-from app.pipeline.step import Step
+from app.pipeline import Step
 import pandas as pd
 
 

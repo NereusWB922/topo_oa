@@ -1,5 +1,5 @@
 import json
-from app.pipeline.step import Step
+from app.pipeline import Step
 
 
 class JsonIngestion(Step):

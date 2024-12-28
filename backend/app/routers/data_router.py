@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from app.services.data_provider import DataProvider
+from app.services import DataProvider
 from fastapi import HTTPException
 
 router = APIRouter(prefix="/api/data")

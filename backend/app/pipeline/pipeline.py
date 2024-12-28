@@ -1,4 +1,4 @@
-from app.pipeline.step import Step
+from .step import Step
 
 
 class Pipeline:

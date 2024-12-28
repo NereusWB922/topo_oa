@@ -1,5 +1,5 @@
 import pytest
-from app.pipeline.processing.parse_str_to_num import ParseStrToNum
+from app.pipeline.processing import ParseStrToNum
 
 
 @pytest.fixture

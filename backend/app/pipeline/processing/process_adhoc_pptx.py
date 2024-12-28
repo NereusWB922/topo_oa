@@ -1,4 +1,4 @@
-from app.pipeline.step import Step
+from app.pipeline import Step
 
 
 class ProcessAdhocPptx(Step):

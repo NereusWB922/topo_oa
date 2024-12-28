@@ -1,4 +1,4 @@
-from app.pipeline.ingestion.pptx_ingestion import PptxIngestion
+from app.pipeline.ingestion import PptxIngestion
 
 
 def test_execute():

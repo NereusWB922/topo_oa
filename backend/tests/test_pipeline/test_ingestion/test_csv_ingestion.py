@@ -1,4 +1,4 @@
-from app.pipeline.ingestion.csv_ingestion import CsvIngestion
+from app.pipeline.ingestion import CsvIngestion
 
 
 def test_execute():

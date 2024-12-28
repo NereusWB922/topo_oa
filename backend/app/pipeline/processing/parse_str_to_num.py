@@ -1,7 +1,7 @@
 import re
 from typing import List
 from decimal import Decimal, InvalidOperation
-from app.pipeline.step import Step
+from app.pipeline import Step
 
 
 class ParseStrToNum(Step):

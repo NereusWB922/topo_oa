@@ -1,5 +1,5 @@
 import pytest
-from app.services.data_provider import DataProvider
+from app.services import DataProvider
 
 
 @pytest.fixture

@@ -1,4 +1,4 @@
-from app.pipeline.ingestion.json_ingestion import JsonIngestion
+from app.pipeline.ingestion import JsonIngestion
 
 
 def test_execute():

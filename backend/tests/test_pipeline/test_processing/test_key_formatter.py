@@ -1,4 +1,4 @@
-from app.pipeline.processing.key_formatter import KeyFormatter
+from app.pipeline.processing import KeyFormatter
 
 import pytest
 

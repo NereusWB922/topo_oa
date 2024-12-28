@@ -1,5 +1,5 @@
 import re
-from app.pipeline.step import Step
+from app.pipeline import Step
 
 
 class KeyFormatter(Step):

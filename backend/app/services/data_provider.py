@@ -1,11 +1,11 @@
-from app.pipeline.pipeline import Pipeline
-from app.pipeline.ingestion.csv_ingestion import CsvIngestion
-from app.pipeline.ingestion.json_ingestion import JsonIngestion
-from app.pipeline.ingestion.pdf_ingestion import PdfIngestion
-from app.pipeline.ingestion.pptx_ingestion import PptxIngestion
-from app.pipeline.processing.key_formatter import KeyFormatter
-from app.pipeline.processing.parse_str_to_num import ParseStrToNum
-from app.pipeline.processing.process_adhoc_pptx import ProcessAdhocPptx
+from app.pipeline import Pipeline
+from app.pipeline.ingestion import (
+    CsvIngestion,
+    JsonIngestion,
+    PdfIngestion,
+    PptxIngestion,
+)
+from app.pipeline.processing import KeyFormatter, ParseStrToNum, ProcessAdhocPptx
 
 
 class DataProvider:

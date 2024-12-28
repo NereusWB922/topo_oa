@@ -1,4 +1,4 @@
-from app.pipeline.ingestion.pdf_ingestion import PdfIngestion
+from app.pipeline.ingestion import PdfIngestion
 
 
 def test_execute():

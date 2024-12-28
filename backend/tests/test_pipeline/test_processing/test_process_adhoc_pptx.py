@@ -1,5 +1,5 @@
 import pytest
-from app.pipeline.processing.process_adhoc_pptx import ProcessAdhocPptx
+from app.pipeline.processing import ProcessAdhocPptx
 
 
 @pytest.fixture

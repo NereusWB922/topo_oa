@@ -1,7 +1,6 @@
 import pytest
 from fastapi.testclient import TestClient
 from app.routers.data_router import router
-from app.services.data_provider import DataProvider
 from fastapi import FastAPI
 
 app = FastAPI()
