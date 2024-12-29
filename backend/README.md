@@ -1,5 +1,8 @@
 # API (FastAPI)
 
+## Prerequisites
+- python 3.12.8
+
 ## Restore Dependencies
 
 You can restore dependencies using either `poetry` or `dependencies.txt`.
