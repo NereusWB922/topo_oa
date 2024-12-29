@@ -19,7 +19,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.mount("/_next/static", StaticFiles(directory="out/_next/static"), name="static")
+nextjs_static_path = os.path.join("out", "_next", "static")
+
+# Mount only if nextjs build folder exists (for production)
+if os.path.exists(nextjs_static_path):
+    app.mount("/_next/static", StaticFiles(directory=nextjs_static_path), name="static")
 
 app.include_router(data_router)
 
