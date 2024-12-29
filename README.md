@@ -13,7 +13,12 @@ For this project, I have chosen the following technologies:
 - **Routing**: NextJS provides built-in file-system based routing, simplifying the development process.
 - **Visualization**: Implemented with Recharts library for simple and effective data visualization.
 
-## Production Deployment
+### Testing
+- **Backend (Unit Tests)**: Implemented unit tests to ensure each service class function correctly.
+- **Frontend (Component Tests)**: Created component tests to verify the rendering and behavior of individual components.
+- **End-to-End (E2E) Tests**: Did not manage to add E2E tests due to time constraints and lower priority, as the project involves minimal interaction.
+
+### Production Deployment
 - For production, both the frontend and backend are containerized into a single Docker image.  
 - The frontend's static files are served using FastAPI.  
 - This approach simplifies the setup process and preparation for production.
