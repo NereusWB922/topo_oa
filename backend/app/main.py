@@ -1,6 +1,9 @@
+import os
 from fastapi import FastAPI
+from fastapi.responses import FileResponse
 from app.routers.data_router import router as data_router
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
@@ -16,7 +19,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.mount("/_next/static", StaticFiles(directory="out/_next/static"), name="static")
+
 app.include_router(data_router)
+
+
+@app.get("/frontend")
+async def get_frontend_index():
+    index_path = os.path.join("out/", "index.html")
+    return FileResponse(index_path)
 
 
 @app.get("/")
