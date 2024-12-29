@@ -1,5 +1,6 @@
 from app.pipeline import Step
-import tabula as tb
+import pdfplumber
+import pandas as pd
 
 
 class PdfIngestion(Step):
@@ -7,5 +8,7 @@ class PdfIngestion(Step):
         self.file_path = file_path
 
     def execute(self, data={}):
-        df = tb.read_pdf(self.file_path)
-        return df[0].to_dict(orient="records")
+        with pdfplumber.open(self.file_path) as pdf:
+            tables = pdf.pages[0].extract_tables()
+        df = pd.DataFrame(tables[0][1:], columns=tables[0][0])
+        return df.to_dict(orient="records")

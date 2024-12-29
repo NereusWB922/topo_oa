@@ -25,7 +25,14 @@ class DataProvider:
             [
                 PdfIngestion("app/datasets/dataset3.pdf"),
                 KeyFormatter(),
-                ParseStrToNum(target_fields=["revenue_in_$"]),
+                ParseStrToNum(
+                    target_fields=[
+                        "year",
+                        "memberships_sold",
+                        "revenue_in_$",
+                        "avg_duration_minutes",
+                    ]
+                ),
             ]
         ).execute()
 
